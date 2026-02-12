@@ -3,197 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activar Lavandería PRO - Oferta Especial</title>
+    <title>Apoya mis proyectos | Aarón Escamilla</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .container {
-            background-color: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            max-width: 480px;
-            width: 90%;
-            text-align: center;
-            border-top: 6px solid #e74c3c; /* Borde rojo superior */
-        }
-        h1 { color: #2c3e50; margin: 0; font-size: 1.8rem; }
-        .subtitle { color: #7f8c8d; margin-bottom: 1rem; margin-top: 5px;}
-        
-        /* --- ESTILOS DE PRECIO Y OFERTA --- */
-        .offer-badge {
-            background-color: #e74c3c;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3);
-        }
-        .price-container {
-            background: #fff5f5; /* Fondo rojo muy suave */
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0 25px 0;
-            border: 1px dashed #e74c3c;
-        }
-        .old-price {
-            font-size: 1.2rem;
-            color: #95a5a6;
-            text-decoration: line-through;
-            display: block;
-        }
-        .new-price {
-            font-size: 2.8rem;
-            color: #2c3e50;
-            font-weight: 800;
-            line-height: 1;
-            display: block;
-            margin: 5px 0;
-        }
-        .payment-type {
-            font-size: 0.9rem;
-            color: #27ae60;
-            font-weight: bold;
-        }
-        /* ---------------------------------- */
-
-        .machine-box {
-            background-color: #edf2f7;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        .machine-label { font-size: 0.8rem; color: #718096; text-transform: uppercase; letter-spacing: 1px; }
-        .machine-id { font-size: 1.2rem; font-weight: bold; color: #2d3748; font-family: monospace; word-break: break-all; margin-top: 2px;}
-
-        .option-card {
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-            text-align: left;
-            transition: all 0.2s;
-        }
-        .option-card:hover { border-color: #cbd5e0; background-color: #f8fafc; }
-        
-        .option-title { font-weight: bold; color: #2d3748; margin-bottom: 8px; display: block; font-size: 1.05rem;}
-        .bank-details { background: #fff; border: 1px solid #e2e8f0; padding: 10px; border-radius: 6px; font-family: monospace; color: #4a5568; font-size: 0.95rem; line-height: 1.5; }
-        
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            margin-top: 10px;
-            transition: transform 0.1s;
-            text-align: center;
-            box-sizing: border-box;
-        }
-        .btn:active { transform: scale(0.98); }
-        
-        .btn-mp { background-color: #009EE3; color: white; }
-        .btn-wa { background-color: #25D366; color: white; }
-        
-        .footer { margin-top: 30px; font-size: 0.8rem; color: #a0aec0; border-top: 1px solid #eee; padding-top: 15px;}
+        :root { --primary: #1f538d; --paypal: #003087; --mercadopago: #009ee3; --dark: #2c3e50; --light: #f4f7f6; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); text-align: center; padding: 40px 20px; }
+        .card-container { max-width: 500px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h1 { color: var(--dark); font-size: 1.8rem; }
+        p { color: #666; margin-bottom: 30px; }
+        .method-btn { display: flex; align-items: center; justify-content: center; padding: 15px; margin: 15px 0; border-radius: 10px; text-decoration: none; font-weight: bold; color: white; transition: 0.3s; }
+        .method-btn:hover { transform: scale(1.02); }
+        .paypal { background: var(--paypal); }
+        .mercadopago { background: var(--mercadopago); }
+        .transfer { background: var(--dark); }
+        .bank-details { background: #f9f9f9; padding: 15px; border-radius: 8px; font-size: 0.9rem; text-align: left; margin-top: 10px; border: 1px dashed #ccc; display: none; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Lavandería PRO</h1>
-        <p class="subtitle">Software Punto de Venta Especializado</p>
-        
-        <div class="price-container">
-            <span class="offer-badge">🔥 OFERTA DE LANZAMIENTO</span>
-            <span class="old-price">$4,499.00 MXN</span>
-            <span class="new-price">$1,499.00</span>
-            <span class="payment-type">PAGO ÚNICO • LICENCIA VITALICIA</span>
-        </div>
+<div class="card-container">
+    <h1>¡Gracias por el apoyo!</h1>
+    <p>Tu contribución ayuda a que siga creando herramientas gratuitas y de código abierto.</p>
 
-        <div class="machine-box">
-            <div class="machine-label">ID DE TU EQUIPO PARA ACTIVACIÓN:</div>
-            <div class="machine-id" id="display-id">Cargando...</div>
-        </div>
+    <a href="https://www.paypal.com/paypalme/jaaronescamilla" target="_blank" class="method-btn paypal">
+        💙 Donar con PayPal
+    </a>
 
-        <p style="text-align: center; font-size: 0.95rem; color: #4a5568; margin-bottom: 15px; font-weight: 500;">
-            Selecciona cómo deseas pagar:
-        </p>
+    <a href="https://link.mercadopago.com.mx/jaaronescamilla" target="_blank" class="method-btn mercadopago">
+        💙 Mercado Pago / Link de Pago
+    </a>
 
-        <div class="option-card">
-            <span class="option-title">🏦 Transferencia SPEI (Sin Comisión)</span>
-            <div class="bank-details">
-                Banco: Scotiabank<br>
-                CLABE: 0444 2025 600 6500 143<br> A nombre de: JORGE AARON ESCAMILLA MORALES
-            </div>
-            <p style="font-size: 0.8rem; color: #718096; margin-top:8px; font-style: italic;">
-                *Usa tu ID de equipo como Concepto de pago.
-            </p>
-        </div>
-
-        <div class="option-card">
-            <span class="option-title">🏪 Tarjeta de Crédito / OXXO</span>
-            <p style="font-size: 0.9rem; color: #718096; margin: 5px 0 10px 0;">
-                Paga de forma segura, incluso a meses (aplican comisiones de MP).
-            </p>
-            <a href="https://mpago.la/1e1kC33" target="_blank" class="btn btn-mp">
-                PAGAR CON MERCADO PAGO
-            </a>
-        </div>
-
-        <div style="margin-top: 25px;">
-            <h3 style="margin: 0 0 5px 0; color: #2d3748; font-size: 1.1rem;">¿Ya realizaste el pago?</h3>
-            <p style="font-size: 0.9rem; color: #718096; margin-bottom: 10px;">
-                Envíanos tu comprobante y recibe tu clave al instante.
-            </p>
-            
-            <a id="btn-whatsapp" href="#" class="btn btn-wa">
-                💬 ENVIAR COMPROBANTE POR WHATSAPP
-            </a>
-        </div>
-
-        <div class="footer">
-            Soporte Técnico: jaaronescamilla@gmail.com<br>
-            &copy; 2025 Aaron Escamilla Dev
-        </div>
+    <a href="#" class="method-btn transfer" onclick="document.getElementById('clabe').style.display='block'; return false;">
+        🏦 Transferencia Bancaria (México)
+    </a>
+    <div id="clabe" class="bank-details">
+        <strong>Banco:</strong> Nu Bank<br>
+        <strong>CLABE:</strong> 6381 8001 0153 6739 96<br>
+        <strong>Nombre:</strong> Jorge Aaron Escamilla Morales
     </div>
 
-    <script>
-        window.onload = function() {
-            // 1. Obtener parámetros de la URL
-            const params = new URLSearchParams(window.location.search);
-            const machineID = params.get('mid') || "NO DETECTADO";
+    <div style="margin-top: 30px;">
+        <a href="main.html" style="color: #999; text-decoration: none; font-size: 0.8rem;">← Volver a la página principal</a>
+    </div>
+</div>
 
-            // 2. Mostrar el ID en pantalla
-            document.getElementById('display-id').innerText = machineID;
-
-            // 3. Configurar el enlace de WhatsApp dinámicamente
-            // ¡¡IMPORTANTE!! CAMBIA ESTE NÚMERO POR EL TUYO REAL
-            const miNumero = "525564950944"; 
-            
-            const mensaje = `Hola Aaron, aproveché la oferta de $1,500 de Lavandería PRO.\n\nMi ID de Máquina es: *${machineID}*\n\nAdjunto mi comprobante de pago.`;
-            
-            const urlWhatsapp = `https://wa.me/${miNumero}?text=${encodeURIComponent(mensaje)}`;
-            
-            document.getElementById('btn-whatsapp').href = urlWhatsapp;
-        }
-    </script>
 </body>
 </html>
